@@ -13,17 +13,17 @@ Editors can search, filter, preview, and pick **ResourceSpace** assets directly 
 ## Architecture Overview
 
 ```mermaid
-flowchart LR
+flowchart TD
     Editor["Umbraco 17 Backoffice<br/>(Lit Picker + Modal)"]
     MgmtApi["Management API Proxy<br/>(/umbraco/management/api/v1/resourcespace)"]
     PVC["Property Value Converter<br/>(Razor + Delivery API v2)"]
     Connector["IDamConnector<br/>(ResourceSpaceDamConnector + IMemoryCache)"]
     RS["ResourceSpace 11.0 DAM<br/>(/api/?...&sign=sha256)"]
 
-    Editor -- "Bearer Token (UMB_AUTH_CONTEXT)" --> MgmtApi
+    Editor -- "Bearer Token<br/>(UMB_AUTH_CONTEXT)" --> MgmtApi
     MgmtApi --> Connector
     PVC --> Connector
-    Connector -- "Server-side SHA-256 Signed Requests" --> RS
+    Connector -- "Server-side SHA-256<br/>Signed Requests" --> RS
 ```
 
 ### Key Capabilities
@@ -73,8 +73,7 @@ On the frontend (`http://localhost:5080/`), `<dam-image />` renders responsive `
 │   ├── seed-demo-assets.php                    # Creates API service user & ingests 8 curated demo assets
 │   └── fetch-royalty-free-assets.sh            # Re-downloads CC0 artworks from Art Institute of Chicago IIIF
 ├── docs/
-│   ├── article.md                              # Companion "24 Days In Umbraco" article
-│   └── assets/screenshots/                     # Backoffice & live demo website screenshots
+│   └── assets/                                 # Brand assets, architecture diagram & demo screenshots
 ├── umbraco-marketplace.json                    # Umbraco Marketplace listing manifest (Skye Technology)
 ├── src/
 │   ├── SkyeTechnology.Umbraco.ResourceSpace/   # Reusable Razor Class Library (RCL) NuGet package

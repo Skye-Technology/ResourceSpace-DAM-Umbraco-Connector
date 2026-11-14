@@ -48,3 +48,6 @@ npm-debug.log*
 docker/resourcespace/.env
 docker/resourcespace/.env.*
 docker/resourcespace/config.php
+
+## Local private drafts
+docs/article.md

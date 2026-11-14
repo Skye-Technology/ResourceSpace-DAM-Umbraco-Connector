@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 1040" width="840" height="1040" role="img" aria-label="SkyeTechnology.Umbraco.ResourceSpace Architecture Diagram">
+  <!-- Outer Slate Frame -->
+  <rect x="0" y="0" width="840" height="1040" fill="#F1F5F9" />
+  <rect x="20" y="20" width="800" height="1000" rx="24" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5" />
+
+  <!-- Header -->
+  <g transform="translate(52, 46) scale(0.1015625)">
+    <rect width="512" height="512" rx="112" fill="#3544B1" />
+    <polygon points="256,108 311,140 256,172 201,140" fill="#CEF373" />
+    <polygon points="191,146 246,178 191,210 136,178" fill="#CEF373" />
+    <polygon points="321,146 376,178 321,210 266,178" fill="#CEF373" />
+    <polygon points="198,222 251,253 251,306 198,275" fill="#CEF373" />
+    <polygon points="314,222 261,253 261,306 314,275" fill="#CEF373" />
+    <path d="M 136 190 L 184 218 V 280 A 72 72 0 0 0 328 280 V 218 L 376 190 V 280 A 120 120 0 0 1 136 280 Z" fill="#FFFFFF" />
+  </g>
+
+  <text x="120" y="69" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="21" font-weight="700" fill="#0F172A">ResourceSpace DAM Connector</text>
+  <text x="120" y="92" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="13.5" font-weight="500" fill="#64748B">Umbraco 17 Architecture  ·  SkyeTechnology.Umbraco.ResourceSpace</text>
+
+  <rect x="632" y="56" width="156" height="32" rx="16" fill="#EEF1FB" stroke="#C7D0F4" stroke-width="1.2" />
+  <text x="710" y="76" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#3544B1">BYO DAM · Zero Copy</text>
+
+  <line x1="52" y1="120" x2="788" y2="120" stroke="#E2E8F0" stroke-width="1.5" />
+
+  <!-- Umbraco 17 Host Container -->
+  <rect x="40" y="362" width="760" height="382" rx="20" fill="#F8FAFF" stroke="#CBD5E1" stroke-width="1.5" stroke-dasharray="6 4" />
+  <rect x="528" y="348" width="248" height="28" rx="14" fill="#3544B1" />
+  <text x="652" y="366" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="11" font-weight="700" letter-spacing="0.6" fill="#FFFFFF">UMBRACO 17 HOST · .NET 10</text>
+
+  <!-- Row 1: Umbraco 17 Backoffice (Browser) -->
+  <rect x="200" y="150" width="440" height="108" rx="16" fill="#0F172A" fill-opacity="0.04" />
+  <rect x="200" y="146" width="440" height="108" rx="16" fill="#FFFFFF" stroke="#3544B1" stroke-width="2" />
+  <rect x="316" y="160" width="208" height="22" rx="11" fill="#EEF1FB" />
+  <text x="420" y="175" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="10.5" font-weight="700" letter-spacing="0.6" fill="#3544B1">BELLISSIMA CLIENT · BROWSER</text>
+  <text x="420" y="206" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="18.5" font-weight="700" fill="#0F172A">Umbraco 17 Backoffice</text>
+  <text x="420" y="232" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="13.5" font-weight="500" fill="#475569">(Lit Picker + Modal)</text>
+
+  <!-- Connector 1: Backoffice -> Management API Proxy -->
+  <path d="M 330 254 L 330 266 Q 330 275 321 275 L 241 275 Q 232 275 232 284 L 232 384" fill="none" stroke="#475569" stroke-width="2.2" stroke-linecap="round" />
+  <polygon points="225,380 232,391 239,380" fill="#475569" />
+
+  <!-- Bearer Token Pill on Connector 1 -->
+  <rect x="104" y="292" width="256" height="48" rx="12" fill="#FFFFFF" stroke="#94A3B8" stroke-width="1.5" />
+  <text x="232" y="312" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="12.5" font-weight="700" fill="#1E293B">Bearer Token</text>
+  <text x="232" y="330" text-anchor="middle" font-family="Menlo, Monaco, Consolas, 'Liberation Mono', monospace" font-size="11" font-weight="700" fill="#3544B1">(UMB_AUTH_CONTEXT)</text>
+
+  <!-- Row 2 Left: Management API Proxy -->
+  <rect x="60" y="396" width="344" height="120" rx="16" fill="#0F172A" fill-opacity="0.04" />
+  <rect x="60" y="392" width="344" height="120" rx="16" fill="#FFFFFF" stroke="#94A3B8" stroke-width="1.75" />
+  <rect x="172" y="392" width="120" height="4" rx="2" fill="#3544B1" />
+  <text x="232" y="419" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="10.5" font-weight="700" letter-spacing="0.6" fill="#64748B">BACKOFFICE API CONTROLLER</text>
+  <text x="232" y="447" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="17.5" font-weight="700" fill="#0F172A">Management API Proxy</text>
+  <rect x="72" y="464" width="320" height="30" rx="8" fill="#F1F5F9" stroke="#E2E8F0" stroke-width="1" />
+  <text x="232" y="483" text-anchor="middle" font-family="Menlo, Monaco, Consolas, 'Liberation Mono', monospace" font-size="10.5" font-weight="600" fill="#334155">/umbraco/management/api/v1/resourcespace</text>
+
+  <!-- Row 2 Right: Property Value Converter -->
+  <rect x="436" y="396" width="344" height="120" rx="16" fill="#0F172A" fill-opacity="0.04" />
+  <rect x="436" y="392" width="344" height="120" rx="16" fill="#FFFFFF" stroke="#94A3B8" stroke-width="1.75" />
+  <rect x="548" y="392" width="120" height="4" rx="2" fill="#3544B1" />
+  <text x="608" y="419" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="10.5" font-weight="700" letter-spacing="0.6" fill="#64748B">PUBLISHED CONTENT DELIVERY</text>
+  <text x="608" y="447" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="17.5" font-weight="700" fill="#0F172A">Property Value Converter</text>
+  <rect x="484" y="464" width="248" height="30" rx="8" fill="#F1F5F9" stroke="#E2E8F0" stroke-width="1" />
+  <text x="608" y="483" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#334155">(Razor + Delivery API v2)</text>
+
+  <!-- Connectors 2 & 3: MgmtApi + PVC -> IDamConnector -->
+  <path d="M 232 512 L 232 540 Q 232 552 244 552 L 368 552 Q 380 552 380 564 L 380 584" fill="none" stroke="#475569" stroke-width="2.2" stroke-linecap="round" />
+  <polygon points="373,580 380,591 387,580" fill="#475569" />
+
+  <path d="M 608 512 L 608 540 Q 608 552 596 552 L 472 552 Q 460 552 460 564 L 460 584" fill="none" stroke="#475569" stroke-width="2.2" stroke-linecap="round" />
+  <polygon points="453,580 460,591 467,580" fill="#475569" />
+
+  <!-- Row 3: IDamConnector -->
+  <rect x="150" y="596" width="540" height="124" rx="16" fill="#3544B1" fill-opacity="0.08" />
+  <rect x="150" y="592" width="540" height="124" rx="16" fill="#FFFFFF" stroke="#3544B1" stroke-width="2.25" />
+  <rect x="302" y="608" width="236" height="22" rx="11" fill="#EEF1FB" />
+  <text x="420" y="623" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="10.5" font-weight="700" letter-spacing="0.6" fill="#3544B1">CORE ABSTRACTION &amp; CACHE</text>
+  <text x="420" y="655" text-anchor="middle" font-family="Menlo, Monaco, Consolas, 'Liberation Mono', monospace" font-size="18" font-weight="700" fill="#0F172A">IDamConnector</text>
+  <rect x="192" y="672" width="456" height="30" rx="8" fill="#F1F5F9" stroke="#E2E8F0" stroke-width="1" />
+  <text x="420" y="691" text-anchor="middle" font-family="Menlo, Monaco, Consolas, 'Liberation Mono', monospace" font-size="11.5" font-weight="600" fill="#334155">(ResourceSpaceDamConnector + IMemoryCache)</text>
+
+  <!-- Connector 4: IDamConnector -> ResourceSpace DAM -->
+  <line x1="420" y1="716" x2="420" y2="830" stroke="#3544B1" stroke-width="2.4" stroke-linecap="round" />
+  <polygon points="413,826 420,837 427,826" fill="#3544B1" />
+
+  <!-- Signed Requests Pill on Connector 4 -->
+  <rect x="256" y="764" width="328" height="42" rx="12" fill="#FFFFFF" stroke="#3544B1" stroke-width="1.5" />
+  <text x="420" y="790" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#1E293B">Server-side SHA-256 Signed Requests</text>
+
+  <!-- Row 4: ResourceSpace 11.0 DAM -->
+  <rect x="170" y="843" width="500" height="124" rx="18" fill="#0F172A" fill-opacity="0.12" />
+  <rect x="170" y="838" width="500" height="124" rx="18" fill="#1E293B" stroke="#334155" stroke-width="2" />
+  <rect x="330" y="838" width="180" height="4.5" rx="2.25" fill="#CEF373" />
+  <text x="420" y="867" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="10.5" font-weight="700" letter-spacing="0.8" fill="#CEF373">EXTERNAL DIGITAL ASSET MANAGEMENT</text>
+  <text x="420" y="897" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="19.5" font-weight="700" fill="#FFFFFF">ResourceSpace 11.0 DAM</text>
+  <rect x="286" y="913" width="268" height="32" rx="8" fill="#0F172A" stroke="#475569" stroke-width="1" />
+  <text x="420" y="934" text-anchor="middle" font-family="Menlo, Monaco, Consolas, 'Liberation Mono', monospace" font-size="12.5" font-weight="600" fill="#CEF373">(/api/?...&amp;sign=sha256)</text>
+
+  <!-- Footer -->
+  <line x1="52" y1="980" x2="788" y2="980" stroke="#E2E8F0" stroke-width="1" />
+  <text x="52" y="1001" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="12" font-weight="600" fill="#64748B">Skye Technology  ·  skye.technology</text>
+  <text x="788" y="1001" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="12" font-weight="500" fill="#64748B">MIT Open Source  ·  Razor &amp; Headless Delivery API v2</text>
+</svg>
