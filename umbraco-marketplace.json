@@ -14,24 +14,28 @@
     "Url": "https://skye.technology",
     "SyncContributorsFromRepository": true
   },
-  "DocumentationUrl": "https://github.com/Skye-Technology/ResourceSpace-DAM-Connector#readme",
-  "IssueTrackerUrl": "https://github.com/Skye-Technology/ResourceSpace-DAM-Connector/issues",
+  "DocumentationUrl": "https://github.com/Skye-Technology/ResourceSpace-DAM-Umbraco-Connector#readme",
+  "IssueTrackerUrl": "https://github.com/Skye-Technology/ResourceSpace-DAM-Umbraco-Connector/issues",
   "Screenshots": [
     {
-      "ImageUrl": "https://raw.githubusercontent.com/Skye-Technology/ResourceSpace-DAM-Connector/main/docs/assets/screenshots/umbraco-backoffice-selected-assets.png",
+      "ImageUrl": "https://raw.githubusercontent.com/Skye-Technology/ResourceSpace-DAM-Umbraco-Connector/main/docs/assets/screenshots/umbraco-backoffice-selected-assets.png",
       "Caption": "Selected ResourceSpace DAM assets in the Umbraco 17 Bellissima backoffice with live DAM status badges and editorial alt-text overrides."
     },
     {
-      "ImageUrl": "https://raw.githubusercontent.com/Skye-Technology/ResourceSpace-DAM-Connector/main/docs/assets/screenshots/umbraco-backoffice-picker-modal.png",
+      "ImageUrl": "https://raw.githubusercontent.com/Skye-Technology/ResourceSpace-DAM-Umbraco-Connector/main/docs/assets/screenshots/umbraco-backoffice-picker-modal.png",
       "Caption": "Slide-out ResourceSpace Asset Picker modal with keyword search, resource-type filters, and rendition/metadata inspector."
     },
     {
-      "ImageUrl": "https://raw.githubusercontent.com/Skye-Technology/ResourceSpace-DAM-Connector/main/docs/assets/screenshots/umbraco-backoffice-governance-warning.png",
+      "ImageUrl": "https://raw.githubusercontent.com/Skye-Technology/ResourceSpace-DAM-Umbraco-Connector/main/docs/assets/screenshots/umbraco-backoffice-governance-warning.png",
       "Caption": "Automatic backoffice governance warning when an asset is restricted or archived in ResourceSpace."
     },
     {
-      "ImageUrl": "https://raw.githubusercontent.com/Skye-Technology/ResourceSpace-DAM-Connector/main/docs/assets/screenshots/website-hero-preview.png",
+      "ImageUrl": "https://raw.githubusercontent.com/Skye-Technology/ResourceSpace-DAM-Umbraco-Connector/main/docs/assets/screenshots/website-hero-preview.png",
       "Caption": "Responsive DAM renditions streamed live to Razor views via the <dam-image /> TagHelper without media duplication."
+    },
+    {
+      "ImageUrl": "https://raw.githubusercontent.com/Skye-Technology/ResourceSpace-DAM-Umbraco-Connector/main/docs/assets/architecture-diagram.png",
+      "Caption": "End-to-end architecture across the Umbraco 17 Bellissima backoffice, Management API proxy, IDamConnector cache, and ResourceSpace 11.0 DAM."
     }
   ],
   "Tags": [
