@@ -9,10 +9,15 @@ on:
   workflow_dispatch:
     inputs:
       publish_to_nuget:
-        description: 'Publish packed package to NuGet.org (requires NUGET_API_KEY secret)'
+        description: 'Publish packed package to NuGet.org via Trusted Publishing (OIDC)'
         required: false
         default: false
         type: boolean
+      nuget_user:
+        description: 'NuGet.org username or organization (optional if NUGET_USER repo variable is set)'
+        required: false
+        default: ''
+        type: string
 
 permissions:
   contents: read
@@ -78,16 +83,36 @@ jobs:
             ./artifacts/*.snupkg
           if-no-files-found: error
 
-      - name: Publish to NuGet.org
-        if: startsWith(github.ref, 'refs/tags/v') || (github.event_name == 'workflow_dispatch' && inputs.publish_to_nuget == true)
-        env:
-          NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
+  publish-nuget:
+    name: Publish to NuGet.org (Trusted Publishing)
+    needs: build-and-pack
+    if: startsWith(github.ref, 'refs/tags/v') || (github.event_name == 'workflow_dispatch' && inputs.publish_to_nuget == true)
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
+
+    steps:
+      - name: Setup .NET 10 SDK
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+
+      - name: Download NuGet artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: nuget-packages
+          path: ./artifacts
+
+      - name: Authenticate with NuGet.org via OIDC Trusted Publishing
+        id: login
+        uses: NuGet/login@v1
+        with:
+          user: ${{ inputs.nuget_user || vars.NUGET_USER || 'skye.technology' }}
+
+      - name: Push package & symbols to NuGet.org
         run: |
-          if [[ -z "${NUGET_API_KEY}" ]]; then
-            echo "::error::NUGET_API_KEY repository secret is not configured. Add it under Settings -> Secrets and variables -> Actions."
-            exit 1
-          fi
-          dotnet nuget push ./artifacts/*.nupkg \
-            --api-key "${NUGET_API_KEY}" \
+          dotnet nuget push "./artifacts/*.nupkg" \
+            --api-key "${{ steps.login.outputs.NUGET_API_KEY }}" \
             --source https://api.nuget.org/v3/index.json \
             --skip-duplicate
